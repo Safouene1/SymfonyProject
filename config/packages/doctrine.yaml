@@ -1,0 +1,10 @@
+doctrine:
+    dbal:
+        # configure these for your database server
+        url: '%env(resolve:DATABASE_URL)%'
+        dbname: test_DB
+        host: localhost
+        port: 3306
+        user: root
+        password: password
+        driver: mysql
