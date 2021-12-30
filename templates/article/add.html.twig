@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}add article{% endblock %}
+
+{% block body %}
+    <h1>Adding to an Article : </h1>
+    <div class="wrapper">
+    {{ form_start(form) }}
+
+
+    <div class="input-field col s12 m6 l6">
+        {{ form_widget(form) }}
+
+
+    <div class="input-field col s12 m12 l12">
+        <input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+    </div>
+    {{ form_end(form) }}
+
+    <span class="error">{{ form_errors(form) }}</span>
+    </div>
+
+{% endblock %}

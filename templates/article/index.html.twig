@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container col-6">
+
+
+    <a href="{{ path('article_add')}}" class="btn btn-primary" >Add New Article</a>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Description</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Détails</th>
+            <th scope="col">Update</th>
+            <th scope="col">Supprimer</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <th scope="row">{{ article.id }}</th>
+                <td>{{ article.designation }}</td>
+                <td>{{ article.description }}</td>
+
+                <td>{{  article.prix}} Dt</td>
+                <td><a class="btn btn-primary" href="{{ path('article_byId',{'id': article.id})}}">Détails</a> </td>
+                <td><a class="btn btn-warning" href="{{ path('update_article',{'id':article.id } )}}">Modifier</a> </td>
+                <td><a class="btn btn-danger" href="{{ path('delete_article',{'id': article.id})}} }}">Supprimer</a> </td>
+
+            </tr>
+
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
